@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function parseQueryString(str){
+        var param = {};
+        
+        if(!str || ('string' !== typeof str && String !== str.constructor)){
+            return param;
+        }
+ 
+        var str = str.split("?");
+        if(str && str.length > 1){
+            str = str[1];
+        }else{
+            return {};
+        }
+ 
+        if(str){
+            str = str.split("&");
+        }
+ 
+        for(var index = 0; index < str.length; index ++){
+            var obj =  str[index].split('=');
+            param[obj[0]] = obj[1];
+        }
+        return param
+}
+
+</script>
+</html>
